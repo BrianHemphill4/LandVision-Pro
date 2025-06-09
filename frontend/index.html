@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YardVision Pro UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4 space-y-6">
+        <h1 class="text-3xl font-bold text-center">YardVision Pro</h1>
+
+        <section class="bg-white shadow rounded p-4">
+            <h2 class="text-xl font-semibold mb-2">Create Design Job</h2>
+            <form id="designForm" class="space-y-2">
+                <input name="project_id" placeholder="Project ID" class="border p-2 w-full" required>
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" name="preview_only" class="form-checkbox">
+                    <span>Preview Only</span>
+                </label>
+                <button class="bg-blue-500 text-white px-3 py-1 rounded" type="submit">Create</button>
+            </form>
+            <pre id="designResult" class="text-sm text-gray-600 mt-2"></pre>
+        </section>
+
+        <section class="bg-white shadow rounded p-4">
+            <h2 class="text-xl font-semibold mb-2">Check Job Status</h2>
+            <form id="statusForm" class="space-y-2">
+                <input name="job_id" placeholder="Job ID" class="border p-2 w-full" required>
+                <button class="bg-green-500 text-white px-3 py-1 rounded" type="submit">Check</button>
+            </form>
+            <pre id="statusResult" class="text-sm text-gray-600 mt-2"></pre>
+        </section>
+
+        <section class="bg-white shadow rounded p-4">
+            <h2 class="text-xl font-semibold mb-2">Purchase Credits</h2>
+            <form id="purchaseForm" class="space-y-2">
+                <input name="tenant_id" placeholder="Tenant ID" class="border p-2 w-full" required>
+                <input name="plan_id" placeholder="Plan ID (starter, pro, agency)" class="border p-2 w-full" required>
+                <button class="bg-purple-500 text-white px-3 py-1 rounded" type="submit">Purchase</button>
+            </form>
+            <pre id="purchaseResult" class="text-sm text-gray-600 mt-2"></pre>
+        </section>
+
+        <section class="bg-white shadow rounded p-4">
+            <h2 class="text-xl font-semibold mb-2">Deduct Credits</h2>
+            <form id="deductForm" class="space-y-2">
+                <input name="tenant_id" placeholder="Tenant ID" class="border p-2 w-full" required>
+                <input name="amount" type="number" placeholder="Amount" class="border p-2 w-full" required>
+                <button class="bg-red-500 text-white px-3 py-1 rounded" type="submit">Deduct</button>
+            </form>
+            <pre id="deductResult" class="text-sm text-gray-600 mt-2"></pre>
+        </section>
+
+        <section class="bg-white shadow rounded p-4">
+            <h2 class="text-xl font-semibold mb-2">Get Rate Card</h2>
+            <form id="rateForm" class="space-y-2">
+                <input name="tenant_id" placeholder="Tenant ID" class="border p-2 w-full" required>
+                <button class="bg-yellow-500 text-white px-3 py-1 rounded" type="submit">Fetch</button>
+            </form>
+            <pre id="rateResult" class="text-sm text-gray-600 mt-2"></pre>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
