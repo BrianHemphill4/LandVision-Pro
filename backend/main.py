@@ -2,7 +2,6 @@ import asyncio
 import uuid
 
 from fastapi import FastAPI, HTTPException, BackgroundTasks
-from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from enum import Enum
 from typing import Dict, List
@@ -10,10 +9,6 @@ import os
 
 app = FastAPI(title="YardVision Pro API", version="0.1")
 
-# Serve the simple frontend for demonstration purposes
-frontend_dir = os.path.join(os.path.dirname(__file__), "..", "frontend")
-if os.path.isdir(frontend_dir):
-    app.mount("/ui", StaticFiles(directory=frontend_dir, html=True), name="ui")
 
 class JobStatus(str, Enum):
     queued = "QUEUED"

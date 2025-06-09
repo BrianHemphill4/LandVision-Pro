@@ -19,9 +19,16 @@ python -m backend.run --host 0.0.0.0 --port 8000
 
 Both approaches serve the FastAPI app (use `--port` to change the port).
 
-### Accessing the Demo UI
+### Frontend
 
-The repository includes a very small front end that interacts with the API. After starting the server, open `http://localhost:8000/ui/` in your browser to try it out.
+A minimal React application lives in the `frontend/` directory. Start it in development mode with:
+
+```bash
+cd frontend
+npm start
+```
+
+The `package.json` is configured with `proxy: "http://localhost:8000"` so API calls will automatically be forwarded to the backend during local development.
 
 ### Available Endpoints
 
